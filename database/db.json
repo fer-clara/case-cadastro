@@ -4,10 +4,10 @@
             "nome": "teste 1",
             "unidadeDeMedida": "kg",
             "quantidade": 2,
-            "preço": 2.50,
-            "perecível": true,
+            "preco": 2.50,
+            "perecivel": true,
             "dataDeValidade": "23/11/2024",
-            "dataDeFabricação": "01/10/2024"
+            "dataDeFabricacao": "01/10/2024"
         }
     ]
 }
