@@ -2,14 +2,14 @@ export interface Item {
   nome: string;
   unidadeDeMedida: unidadeDeMedida;
   quantidade: number;
-  preço: number;
-  perecível: boolean;
+  preco: number;
+  perecivel: boolean;
   dataDeValidade: Date;
-  dataDeFabricação: Date;
+  dataDeFabricacao: Date;
 }
 
 export enum unidadeDeMedida {
-    'kg',
-    'lt',
-    'un'
+  'kg',
+  'lt',
+  'un'
 }
