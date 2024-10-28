@@ -2,7 +2,11 @@
 <div class="list">
   <div class="container">
     <div class="content-container">
-      <p>list works!</p>
+      @for (item of items; track $index) {
+      <li>
+        {{ item.nome }}
+      </li>
+      }
     </div>
   </div>
 </div>
