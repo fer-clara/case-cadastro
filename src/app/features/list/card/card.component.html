@@ -1,0 +1,19 @@
+<mat-card appearance="outlined">
+  <mat-expansion-panel
+    (opened)="panelOpenState.set(true)"
+    (closed)="panelOpenState.set(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> {{ item().nome }}</mat-panel-title>
+      <p>Data de validade: {{ item().dataDeValidade }}</p>
+      <mat-panel-description>
+        <button mat-button>Editar</button>
+        <button mat-button>Deletar</button>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>Preço: {{ item().preco | currency }}</p>
+    <p>É perecível? {{ item().perecivel ? "sim" : "não" }}</p>
+    <p>Quantidade: {{ item().quantidade }}{{ item().unidadeDeMedida }}</p>
+    <p>Data de fabricação: {{ item().dataDeFabricacao }}</p>
+  </mat-expansion-panel>
+</mat-card>
