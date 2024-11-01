@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, input, signal } from '@angular/core';
+import { Component, computed, input, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -15,4 +15,14 @@ import { Item } from '../../../shared/models/item.interface';
 export class CardComponent {
   readonly panelOpenState = signal(false);
   item = input.required<Item>();
+
+  itemTitle = computed(() => this.item().nome);
+  itemUnidadeDeMedida = computed(() => this.item().unidadeDeMedida);
+  itemQuantidade = computed(() => this.item().quantidade);
+  itemPreco = computed(() => this.item().preco);
+  itemPerecivel = computed(() => this.item().perecivel);
+  itemDataDeValidade = computed(() => this.item().dataDeValidade);
+  itemDataDeFabricacao = computed(() => this.item().dataDeFabricacao);
+
+  
 }
