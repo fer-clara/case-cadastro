@@ -1,4 +1,5 @@
 export interface Item {
+  id: number;
   nome: string;
   unidadeDeMedida: unidadeDeMedida;
   quantidade: number;
