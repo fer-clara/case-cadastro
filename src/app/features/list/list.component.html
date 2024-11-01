@@ -1,6 +1,10 @@
 <app-header />
 <div class="list">
   <div class="container">
-    <div class="content-container">@for (item of items; track $index) { }</div>
+    <div class="content-container">
+      @for (item of items; track $index) {
+      <app-card [item]="item" />
+      }
+    </div>
   </div>
 </div>
