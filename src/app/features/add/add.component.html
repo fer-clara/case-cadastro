@@ -1,2 +1,12 @@
 <app-header />
-<p>add works!</p>
+<div class="container">
+  <div class="content-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field color="primary">
+        <mat-label>Insira o nome:</mat-label>
+        <input matInput type="text" formControlName="nome" placeholder="Nome" />
+      </mat-form-field>
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+</div>
