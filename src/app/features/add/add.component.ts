@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ItemsService } from '../../shared/services/items.service';
 import { unidadeDeMedida } from '../../shared/models/item.interface';
 import { MatSnackBar } from '@angular/material/snack-bar'
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,6 +20,7 @@ import { MatSnackBar } from '@angular/material/snack-bar'
 export class AddComponent {
   itemService = inject(ItemsService);
   matSnackBar = inject(MatSnackBar);
+  router = inject(Router);
 
   form = new FormGroup({
     nome: new FormControl<string>('', {
@@ -39,7 +41,14 @@ export class AddComponent {
       preco: 1,
       perecivel: true
     }).subscribe(() => {
-      alert('success')
+      this.matSnackBar.open('Cadastrado com sucesso!', 'Ok', {
+        duration: 3000,
+        horizontalPosition: 'right',
+        verticalPosition: 'top'
+      });
+
+      this.router.navigateByUrl('/');
+
     })
   }
 }
