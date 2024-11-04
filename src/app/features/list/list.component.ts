@@ -3,7 +3,7 @@ import { HeaderComponent } from '../../shared/components/header/header.component
 import { ItemsService } from '../../shared/services/items.service';
 import { Item } from '../../shared/models/item.interface';
 import { CardComponent } from './card/card.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
@@ -17,9 +17,15 @@ export class ListComponent {
   items: Item[] = [];
   httpClient = inject(ItemsService);
 
+  router = inject(Router);
+
   ngOnInit() {
     this.httpClient.getAllItems().subscribe((items) => {
       this.items = items;
     })
+  }
+
+  onEdit() {
+    this.router.navigateByUrl('/editar');
   }
 }

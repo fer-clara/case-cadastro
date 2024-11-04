@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, input, signal } from '@angular/core';
+import { Component, computed, EventEmitter, input, Output, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -14,6 +14,8 @@ import { Item } from '../../../shared/models/item.interface';
 })
 export class CardComponent {
   readonly panelOpenState = signal(false);
+  @Output() edit = new EventEmitter();
+
   item = input.required<Item>();
 
   itemTitle = computed(() => this.item().nome);

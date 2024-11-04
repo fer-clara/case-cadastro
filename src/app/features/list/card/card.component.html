@@ -5,9 +5,8 @@
   >
     <mat-expansion-panel-header>
       <mat-panel-title> {{ itemTitle() }}</mat-panel-title>
-      <p>Data de validade: {{ itemDataDeValidade() }}</p>
       <mat-panel-description>
-        <button mat-button>Editar</button>
+        <button mat-button (click)="edit.emit()">Editar</button>
         <button mat-button>Deletar</button>
       </mat-panel-description>
     </mat-expansion-panel-header>
@@ -15,5 +14,6 @@
     <p>É perecível? {{ itemPerecivel() ? "sim" : "não" }}</p>
     <p>Quantidade: {{ itemQuantidade() }}{{ itemUnidadeDeMedida() }}</p>
     <p>Data de fabricação: {{ itemDataDeFabricacao() }}</p>
+    <p>Data de validade: {{ itemDataDeValidade() }}</p>
   </mat-expansion-panel>
 </mat-card>

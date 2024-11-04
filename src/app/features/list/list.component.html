@@ -10,7 +10,7 @@
   <div class="container">
     <div class="content-container">
       @for (item of items; track $index) {
-      <app-card [item]="item" />
+      <app-card [item]="item" (edit)="onEdit()" />
       }
     </div>
   </div>
