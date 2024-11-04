@@ -41,11 +41,7 @@ export class AddComponent {
       preco: 1,
       perecivel: true
     }).subscribe(() => {
-      this.matSnackBar.open('Cadastrado com sucesso!', 'Ok', {
-        duration: 3000,
-        horizontalPosition: 'right',
-        verticalPosition: 'top'
-      });
+      this.matSnackBar.open('Cadastrado com sucesso!', 'Ok');
 
       this.router.navigateByUrl('/');
 
